@@ -1,0 +1,192 @@
+<web-app>
+
+  <servlet>
+    <servlet-name>RegistrationClass</servlet-name>
+    <servlet-class>RegistrationClass</servlet-class>
+  </servlet>
+
+<servlet-mapping>
+  <servlet-name>RegistrationClass</servlet-name>
+  <url-pattern>/RegistrationClass</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>UpdateDelivery</servlet-name>
+    <servlet-class>UpdateDelivery</servlet-class>
+  </servlet>
+
+<servlet-mapping>
+  <servlet-name>UpdateDelivery</servlet-name>
+  <url-pattern>/UpdateDelivery</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>UpdateUserCredentials</servlet-name>
+    <servlet-class>UpdateUserCredentials</servlet-class>
+  </servlet>
+
+<servlet-mapping>
+  <servlet-name>UpdateUserCredentials</servlet-name>
+  <url-pattern>/UpdateUserCredentials</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>ForgetPasswordHandler</servlet-name>
+    <servlet-class>ForgetPasswordHandler</servlet-class>
+  </servlet>
+
+<servlet-mapping>
+  <servlet-name>ForgetPasswordHandler</servlet-name>
+  <url-pattern>/ForgetPasswordHandler</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+    <servlet-name>UpdateTransfer</servlet-name>
+    <servlet-class>UpdateTransfer</servlet-class>
+  </servlet>
+
+<servlet-mapping>
+  <servlet-name>UpdateTransfer</servlet-name>
+  <url-pattern>/UpdateTransfer</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>UpdateDataClass</servlet-name>
+    <servlet-class>UpdateDataClass</servlet-class>
+  </servlet>
+
+<servlet-mapping>
+  <servlet-name>UpdateDataClass</servlet-name>
+  <url-pattern>/UpdateDataClass</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>Login</servlet-name>
+  <servlet-class>Login</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>Login</servlet-name>
+  <url-pattern>/Login</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>LoginRealm</servlet-name>
+  <servlet-class>LoginRealm</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>LoginRealm</servlet-name>
+  <url-pattern>/LoginRealm</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>UserDataList</servlet-name>
+  <servlet-class>UserDataList</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>UserDataList</servlet-name>
+  <url-pattern>/UserDataList</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>SellClass</servlet-name>
+  <servlet-class>SellClass</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>SellClass</servlet-name>
+  <url-pattern>/SellClass</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>StatusReport</servlet-name>
+  <servlet-class>StatusReport</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>StatusReport</servlet-name>
+  <url-pattern>/StatusReport</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>ProcessPage</servlet-name>
+  <servlet-class>ProcessPage</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>ProcessPage</servlet-name>
+  <url-pattern>/ProcessPage</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>AddCart</servlet-name>
+  <servlet-class>AddCart</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>AddCart</servlet-name>
+  <url-pattern>/AddCart</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>CartDataList</servlet-name>
+  <servlet-class>CartDataList</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>CartDataList</servlet-name>
+  <url-pattern>/CartDataList</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>RoleSelector</servlet-name>
+  <servlet-class>RoleSelector</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>RoleSelector</servlet-name>
+  <url-pattern>/RoleSelector</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>SellersList</servlet-name>
+  <servlet-class>SellersList</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>SellersList</servlet-name>
+  <url-pattern>/SellersList</url-pattern>
+</servlet-mapping>
+
+<security-constraint>
+  <web-resource-collection>
+  	<web-resource-name>AgroGrocer</web-resource-name>
+  	<url-pattern>/LoginPage.jsp</url-pattern>
+    <url-pattern>/RegistrationPage.jsp</url-pattern>
+    <url-pattern>/success.jsp</url-pattern>
+    <url-pattern>/login_failed.jsp</url-pattern>
+  </web-resource-collection>
+  <!-- <auth-constraint>
+      <role-name>user</role-name>
+  </auth-constraint> -->
+</security-constraint>
+
+<!-- <login-config>
+    <auth-method>FORM</auth-method>
+      <form-login-config>
+          <form-login-page>/success.jsp</form-login-page>
+          <form-error-page>/login_failed.jsp</form-error-page>
+      </form-login-config>
+</login-config> -->
+
+<welcome-file-list>
+    <welcome-file>LoginPage.jsp</welcome-file>
+  </welcome-file-list>
+
+  <security-role>
+	   <role-name>user</role-name>
+  </security-role>
+</web-app>
