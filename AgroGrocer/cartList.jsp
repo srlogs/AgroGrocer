@@ -157,6 +157,15 @@
       background-color: #4CAF50;
       color: white;
     }
+    label 
+    {
+      margin-top: 10px;
+			text-align: center;
+			font-size: 15px;
+			font-family:  'Roboto', sans-serif;
+			font-weight: 500;
+			color: grey;
+    }
     </style>
   </head>
   <body>
@@ -174,6 +183,14 @@
   </div>
 
   <center>
+    <% if(jsonarray.length() == 0)
+    {
+        %>
+        <label>No records found</label>
+        <%
+    } 
+    else { 
+      %>
       <table>
         <tr>
           <th>Seller Name</th>
@@ -204,11 +221,13 @@
               </td>
 
               <td>
-                <% out.println(jsonobj.getString("status")); %>
+                
+                <%out.println(jsonobj.getString("status"));%>
               </td>
             </tr>
             <% } %>
           </table>
+          <% } %>
           <br><br>
           <form action="DataListPage.jsp" method="post">
           <input type="submit" name="submit" value="Back" class="buttonAlign">

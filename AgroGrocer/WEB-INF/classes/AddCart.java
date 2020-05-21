@@ -37,6 +37,8 @@ public class AddCart extends HttpServlet
       con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/agrogrocer","user","password");
       DatabaseMetaData dbm = con.getMetaData();
       stmt = con.createStatement();
+      String updateQuery = "UPDATE productdata SET status = '1' WHERE emailid = '"+request.getParameter("emailid")+"' AND name = '"+session.getAttribute("dataName")+"'  AND quantity = '"+request.getParameter("quantity")+"' AND price =  '"+request.getParameter("price")+"'";
+      stmt.executeUpdate(updateQuery);
       ResultSet rs = dbm.getTables(null, null, "cartdata", null);
       if(rs.next())
       {
@@ -45,13 +47,15 @@ public class AddCart extends HttpServlet
       }
       else
       {
-        create = "CREATE TABLE cartdata(productname varchar(100), sellername varchar(50), buyername varchar(20), quantity varchar(50), price varchar(20), date varchar(40), time varchar(50), location varchar(50), status varchar(50))";
+        create = "CREATE TABLE cartdata(productname varchar(100), sellername varchar(150), buyername varchar(120), quantity varchar(50), price varchar(20), date varchar(40), time varchar(50), location varchar(50), status varchar(50))";
         stmt.executeUpdate(create);
         query = "INSERT INTO cartdata(productname, sellername, buyername, quantity, price, date, time, location, status) VALUES('"+session.getAttribute("dataName")+"', '"+request.getParameter("sellername")+"', '"+session.getAttribute("emailId")+"', '"+request.getParameter("quantity")+"', '"+request.getParameter("price")+"', '"+date+"', '"+actime+"', '"+request.getParameter("district")+"', 'queued')";
         stmt.executeUpdate(query);
       }
       stmt.close();
       con.close();
+      
+      
       RequestDispatcher rd = sc.getRequestDispatcher("/success.jsp");
       rd.include(request, response);
     }

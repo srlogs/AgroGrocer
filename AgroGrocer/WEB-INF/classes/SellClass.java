@@ -30,14 +30,14 @@ public class SellClass extends HttpServlet
       ResultSet rs = dbm.getTables(null, null, "productdata", null);
       if(rs.next())
       {
-        query = "INSERT INTO productdata(emailId, name, quantity, price, status) VALUES('"+session.getAttribute("emailId")+"', '"+session.getAttribute("dataName")+"', '"+request.getParameter("quantity")+"', '"+request.getParameter("price")+"', 'not sold')";
+        query = "INSERT INTO productdata(emailId, name, quantity, price, status) VALUES('"+session.getAttribute("emailId")+"', '"+session.getAttribute("dataName")+"', '"+request.getParameter("quantity")+"', '"+request.getParameter("price")+"', '0')";
         stmt.executeUpdate(query);
       }
       else
       {
-        create = "CREATE TABLE productdata(emailId varchar(100) NOT NULL REFERENCES userdata(emailId) ON DELETE CASCADE, name varchar(50), quantity varchar(50), price varchar(50), status varchar(50))";
+        create = "CREATE TABLE productdata(emailId varchar(150) NOT NULL REFERENCES userdata(emailId) ON DELETE CASCADE, name varchar(50), quantity varchar(50), price varchar(50), status varchar(50))";
         stmt.executeUpdate(create);
-        query = "INSERT INTO productdata(emailId, name, quantity, price, status) VALUES('"+session.getAttribute("emailId")+"', '"+session.getAttribute("dataName")+"', '"+request.getParameter("quantity")+"', '"+request.getParameter("price")+"', 'not sold')";
+        query = "INSERT INTO productdata(emailId, name, quantity, price, status) VALUES('"+session.getAttribute("emailId")+"', '"+session.getAttribute("dataName")+"', '"+request.getParameter("quantity")+"', '"+request.getParameter("price")+"', '0')";
         stmt.executeUpdate(query);
       }
       ResultSet rst = dbm.getTables(null, null, "userdata", null);

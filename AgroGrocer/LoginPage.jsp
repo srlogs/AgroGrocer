@@ -128,7 +128,19 @@
 				font-weight: 500;
 				color: grey;
 			}
-
+			.forget
+			{
+				background-color: #E9F3E7;
+				text-align: center;
+				border-style: none;
+				color: grey;
+				font-family:  'Roboto', sans-serif;
+				font-size: medium;
+				font-weight: 500;
+				margin-top: 0px;
+				letter-spacing: 1.5px;
+			}
+			}
 		</style>
 	</head>
 	<body>
@@ -158,11 +170,17 @@
 	}
 %>
 <br>
-				<input type="submit" name="signIn" value="LOGIN" id="signIn" class="button" required>
-				<br>
-				<label> OR </label>
+				<input type="submit" name="signIn" value="LOGIN" id="signIn" class="button" required> 
+
+
+
 			</div>
 		</form>
+		<br>
+		<div>
+		<label> OR </label> &nbsp;&nbsp;&nbsp;&nbsp;
+		<button type="button" onclick="window.location='EmailIdRequester.jsp'" class="forget">Forget Password</button>
+	</div>
 		<div>
 		<form action="RegistrationPage.jsp">
 			<input type="submit" name="register" id="register" class="registerPage" value="REGISTER">

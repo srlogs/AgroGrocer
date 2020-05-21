@@ -4,7 +4,7 @@
 <html>
   <head>
     <title>
-      User data
+      Product data list
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -130,12 +130,42 @@
     .button:hover
     {
         background-color: #2EE59D;
-        box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+        box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4); 
         color: #fff;
         transition: 0.5s;
         transform: translateY(-7px);
     }
+    label 
+    {
+      margin-top: 10px;
+			text-align: center;
+			font-size: 15px;
+			font-family:  'Roboto', sans-serif;
+			font-weight: 500;
+			color: grey;
+    }
     </style>
+    <script type="text/javascript">
+        function sendEmail() {
+                var useremail = document.getElementById("buyerid").value;
+                var productName = document.getElementById("productname").value;
+                var quantity = document.getElemetById("quantity").value;
+                var price = document.getElementById("price").value;
+                Email.send({
+                    Host: "smtp.gmail.com",
+                    Username : "logeshwaran.sr1@gmail.com",
+                    Password : "Logiwaran1999!",
+                    To : useremail,
+                    From : "logeshwaran.sr1@gmail.com",
+                    Subject : "Purchase successfull",
+                    Body : "Product name:" +productName+"\n"+"Quantity: "+quantity+"\n"+ "Price"+price+"\n"+"Product purchased",
+                })
+                .then(function(message){
+                    // alert("mail sent successfully")
+                    document.form.submit();
+                });
+            }
+    </script>
   </head>
   <body>
     <% JSONArray jsonarray = (JSONArray) request.getAttribute("userData"); %>
@@ -150,6 +180,14 @@
   </div>
   </div>
   <center>
+    <% if(jsonarray.length() == 0)
+    {
+        %>
+        <label>No records found</label>
+        <%
+    } 
+    else { 
+      %>
       <table>
         <%-- <tr>
           <th>User Name</th>
@@ -185,12 +223,45 @@
               </td>
 
               <td>
-                <% out.println(jsonobj.getString("status")); %>
+                <% 
+                  String val = (String) jsonobj.getString("status");
+                  String emailval = (String) request.getAttribute("buyername");
+                  String data = "";
+                  String buyer_email_id = "";
+                  if(emailval != null)
+                  {
+                    buyer_email_id = emailval;
+                  }
+                  if(val != null)
+                  {
+                    if(val.equals("0"))
+                    {
+                      data = "not sold";
+                    }
+                    else if(val.equals("1"))
+                    {
+                      data = "Requested";
+                    }
+                    else if(val.equals("2"))
+                    {
+                      data = "sold out";
+                    }
+                  }
+                %>
+                <!-- action="UpdateDelivery" method="POST" -->
+                <form action="UpdateDelivery" method="POST" name="updatedeliveryform" onsubmit="sendEmail();"> 
+                  <input type="hidden" id="productname" name="productname" value="<%=jsonobj.getString("productName")%>">
+                  <input type="hidden" id="buyerid" name="buyerid" value="<%=buyer_email_id%>">
+                  <input type="hidden" id="quantity" name="quantity" value="<%=jsonobj.getString("quantity")%>">
+                  <input type="hidden" id="price" name="price" value="<%=jsonobj.getString("price")%>">
+                  <input type="submit" id="status" name="status" value="<%=data%>" >
+                </form>
               </td>
               </tr>
             <% } %>
 
           </table>
+          <% } %>
           <br><br>
           <form action="DataListPage.jsp" method="post">
           <input type="submit" name="submit" value="back" class="button">

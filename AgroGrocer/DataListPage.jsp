@@ -276,26 +276,22 @@ div.desc {
 <div class="card">
 <div class="responsive">
 <div class="gallery">
-  <%-- <a target="_blank" href="ProcessPage" name="imageSrc" value="tomato.jpeg">
-    <img src="tomato.jpeg" id="imageElement" alt="">
-  </a> --%>
+  
   <form action="ProcessPage" method="get">
-  <input type="hidden" value="tomato.jpeg" name="imageSrc">
+  <input type="hidden" value="images/tomato.jpeg" name="imageSrc">
     <input type="hidden" value="Tomato" name="imageName">
-    <input type="image" src="tomato.jpeg" alt="Mushroom" width="180px" height="100px">
+    <input type="image" src="images/tomato.jpeg" alt="Mushroom" width="180px" height="100px">
   </form>
   <div class="desc">Tomato</div>
 </div></div>
 
 <div class="responsive">
 <div class="gallery">
-  <%-- <a target="_blank" href="ProcessPage" name="imageSrc" value="potato.jpeg" >
-    <img src="potato.jpeg" id="imageElement" alt="">
-  </a> --%>
+
   <form action="ProcessPage" method="get">
-  <input type="hidden" value="potato.jpeg" name="imageSrc">
+  <input type="hidden" value="images/potato.jpeg" name="imageSrc">
     <input type="hidden" value="Potato" name="imageName">
-    <input type="image" src="potato.jpeg" alt="Mushroom" width="180px" height="100px">
+    <input type="image" src="images/potato.jpeg" alt="Mushroom" width="180px" height="100px">
   </form>
   <div class="desc">Potato</div>
 </div></div>
@@ -305,13 +301,11 @@ div.desc {
 
 <div class="responsive">
 <div class="gallery">
-  <%-- <a target="_blank" href="ProcessPage" name="imageSrc" value="Mushroom.jpeg" >
-    <img src="Mushroom.jpeg" id="imageElement" alt="">
-  </a> --%>
+ 
   <form action="ProcessPage" method="get">
-  <input type="hidden" value="Mushroom.jpeg" name="imageSrc">
+  <input type="hidden" value="images/Mushroom.jpeg" name="imageSrc">
     <input type="hidden" value="Mushroom" name="imageName">
-    <input type="image" src="Mushroom.jpeg" alt="Mushroom" width="180px" height="100px">
+    <input type="image" src="images/Mushroom.jpeg" alt="Mushroom" width="180px" height="100px">
   </form>
   <div class="desc">Mushroom</div>
 </div></div>
@@ -321,26 +315,22 @@ div.desc {
 
 <div class="responsive">
 <div class="gallery">
-  <%-- <a target="_blank" href="ProcessPage" name="imageSrc" value="brinjal.jpeg" >
-    <img src="brinjal.jpeg" id="imageElement" alt="">
-  </a> --%>
+ 
   <form action="ProcessPage" method="get">
-  <input type="hidden" value="brinjal.jpeg" name="imageSrc">
+  <input type="hidden" value="images/brinjal.jpeg" name="imageSrc">
     <input type="hidden" value="Brinjal" name="imageName">
-    <input type="image" src="brinjal.jpeg" alt="Mushroom" width="180px" height="100px">
+    <input type="image" src="images/brinjal.jpeg" alt="Mushroom" width="180px" height="100px">
   </form>
   <div class="desc">Brinjal</div>
 </div></div>
 
 <div class="responsive">
 <div class="gallery">
-  <%-- <a target="_blank" href="ProcessPage" name="imageSrc" value="carot.jpeg" >
-    <img src="carot.jpeg" id="imageElement" alt="">
-  </a> --%>
+  
   <form action="ProcessPage" method="get">
-  <input type="hidden" value="carot.jpeg" name="imageSrc">
+  <input type="hidden" value="images/carot.jpeg" name="imageSrc">
     <input type="hidden" value="Carrot" name="imageName">
-    <input type="image" src="carot.jpeg" alt="Mushroom" width="180px" height="100px">
+    <input type="image" src="images/carot.jpeg" alt="Mushroom" width="180px" height="100px">
   </form>
   <div class="desc">Carrot</div>
 </div></div>
@@ -353,9 +343,9 @@ div.desc {
     <img src="drumstick.jpeg" id="imageElement" alt="">
   </a> --%>
   <form action="ProcessPage" method="get">
-  <input type="hidden" value="drumstick.jpeg" name="imageSrc">
+  <input type="hidden" value="images/drumstick.jpeg" name="imageSrc">
     <input type="hidden" value="Drumstick" name="imageName">
-    <input type="image" src="drumstick.jpeg" alt="Mushroom" width="180px" height="100px">
+    <input type="image" src="images/drumstick.jpeg" alt="Mushroom" width="180px" height="100px">
   </form>
   <div class="desc">Drumstick</div>
 </div></div>
@@ -368,9 +358,9 @@ div.desc {
     <img src="chilli.jpeg" id="imageElement" alt="">
   </a> --%>
   <form action="ProcessPage" method="get">
-  <input type="hidden" value="chilli.jpeg" name="imageSrc">
+  <input type="hidden" value="images/chilli.jpeg" name="imageSrc">
     <input type="hidden" value="Chilli" name="imageName">
-    <input type="image" src="chilli.jpeg" alt="Mushroom" width="180px" height="100px">
+    <input type="image" src="images/chilli.jpeg" alt="Mushroom" width="180px" height="100px">
   </form>
   <div class="desc">Chilli</div>
 </div></div>
@@ -382,9 +372,9 @@ div.desc {
     <img src="onion.jpeg" id="imageElement" alt="">
   </a> --%>
   <form action="ProcessPage" method="get">
-  <input type="hidden" value="onion.jpeg" name="imageSrc">
+  <input type="hidden" value="images/onion.jpeg" name="imageSrc">
     <input type="hidden" value="Onion" name="imageName">
-    <input type="image" src="onion.jpeg" alt="Mushroom" width="180px" height="100px">
+    <input type="image" src="images/onion.jpeg" alt="Mushroom" width="180px" height="100px">
   </form>
   <div class="desc">Onion</div>
 </div></div>
@@ -396,9 +386,9 @@ div.desc {
     <img src="radish.jpeg" id="imageElement" alt="">
   </a> --%>
   <form action="ProcessPage" method="get">
-  <input type="hidden" value="radish.jpeg" name="imageSrc">
+  <input type="hidden" value="images/radish.jpeg" name="imageSrc">
     <input type="hidden" value="Radish" name="imageName">
-    <input type="image" src="radish.jpeg" alt="Mushroom" width="180px" height="100px">
+    <input type="image" src="images/radish.jpeg" alt="Mushroom" width="180px" height="100px">
   </form>
   <div class="desc">Radish</div>
 </div></div>
@@ -409,9 +399,9 @@ div.desc {
     <img src="oil.jpeg" id="imageElement" alt="">
   </a> --%>
   <form action="ProcessPage" method="get">
-  <input type="hidden" value="oil.jpeg" name="imageSrc">
+  <input type="hidden" value="images/oil.jpeg" name="imageSrc">
     <input type="hidden" value="Oil" name="imageName">
-    <input type="image" src="oil.jpeg" alt="Mushroom" width="180px" height="100px">
+    <input type="image" src="images/oil.jpeg" alt="Mushroom" width="180px" height="100px">
   </form>
   <div class="desc">Oil</div>
 </div></div>
@@ -423,9 +413,9 @@ div.desc {
     <img src="lf.jpeg" id="imageElement" alt="">
   </a> --%>
   <form action="ProcessPage" method="get">
-  <input type="hidden" value="lf.jpeg" name="imageSrc">
+  <input type="hidden" value="images/lf.jpeg" name="imageSrc">
     <input type="hidden" value="Ladish Finger" name="imageName">
-    <input type="image" src="lf.jpeg" alt="Mushroom" width="180px" height="100px">
+    <input type="image" src="images/lf.jpeg" alt="Mushroom" width="180px" height="100px">
   </form>
   <div class="desc">Ladies Finger</div>
 </div></div>
@@ -436,9 +426,9 @@ div.desc {
     <img src="pumkin.jpeg" id="imageElement" alt="">
   </a> --%>
   <form action="ProcessPage" method="get">
-  <input type="hidden" value="pumkin.jpeg" name="imageSrc">
+  <input type="hidden" value="images/pumkin.jpeg" name="imageSrc">
     <input type="hidden" value="Pumkin" name="imageName">
-    <input type="image" src="pumkin.jpeg" alt="Mushroom" width="180px" height="100px">
+    <input type="image" src="images/pumkin.jpeg" alt="Mushroom" width="180px" height="100px">
   </form>
   <div class="desc">Pumkin</div>
 </div></div>

@@ -205,9 +205,12 @@
             <% } %>
           </table>
           <br><br>
-          <form action="StatusReport" method="post">
-          <input type="submit" name="submit" value="Status" class="button">
+          <form action="UpdateTransfer" method="post">
+          <input type="submit" name="submit" value="Update data" class="button">
           </form>
+          <form action="StatusReport" method="post">
+            <input type="submit" name="submit" value="Status" class="button">
+            </form>
         </center>
   </body>
 </html>

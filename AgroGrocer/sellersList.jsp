@@ -166,6 +166,15 @@
       color: white;
 
     }
+    label 
+    {
+      margin-top: 10px;
+			text-align: center;
+			font-size: 15px;
+			font-family:  'Roboto', sans-serif;
+			font-weight: 500;
+			color: grey;
+    }
     </style>
   </head>
   <body>
@@ -201,6 +210,14 @@
   %>
   <br><br>
   <center>
+    <% if(jsonarray.length() == 0)
+    {
+        %>
+        <label>No records found</label>
+        <%
+    } 
+    else { 
+      %>
       <table>
         <tr>
           <th>Seller Name</th>
@@ -239,6 +256,7 @@
               <td>
                 <form action="AddCart" method="post">
                   <input type="hidden" value="<%=jsonobj.getString("username")%>" name="sellername">
+                  <input type="hidden" value="<%=jsonobj.getString("emailid")%>" name = "emailid">
                   <input type="hidden" value="<%=jsonobj.getString("quantity")%>" name="quantity">
                   <input type="hidden" value="<%=jsonobj.getString("price")%>" name="price">
                   <input type="hidden" value="<%=jsonobj.getString("district")%>" name="district">
@@ -248,6 +266,7 @@
             </tr>
             <% } %>
           </table>
+          <% } %>
           <br><br>
           <form action="DataListPage.jsp" method="post">
           <input type="submit" name="submit" value="Back" class="button">

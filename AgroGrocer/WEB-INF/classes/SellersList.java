@@ -28,21 +28,25 @@ public class SellersList extends HttpServlet
       Class.forName("org.postgresql.Driver");
       con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/agrogrocer","user","password");
       stmt = con.createStatement();
-      String query = "SELECT userdata.username, productdata.emailId, productdata.name, productdata.quantity, productdata.price, userdata.district FROM userdata, productdata WHERE productdata.name = '"+session.getAttribute("dataName")+"' AND productdata.emailId = userdata.emailId";
+      String query = "SELECT userdata.username, productdata.emailId, productdata.status, productdata.name, productdata.quantity, productdata.price, userdata.district FROM userdata, productdata WHERE productdata.name = '"+session.getAttribute("dataName")+"' AND productdata.emailId = userdata.emailId";
       ResultSet rs = stmt.executeQuery(query);
       while(rs.next())
       {
-        if(rs.getString("emailId").equals(session.getAttribute("emailId")))
+        if(rs.getString("emailId").equals(session.getAttribute("emailId")) && (rs.getString("status").equals("1") || rs.getString("status").equals("2")))
         {
           continue;
         }
-        jsonObject = new JSONObject();
-        jsonObject.put("username", rs.getString("username"));
-        jsonObject.put("productName", rs.getString("name"));
-        jsonObject.put("quantity", rs.getString("quantity"));
-        jsonObject.put("price", rs.getString("price"));
-        jsonObject.put("district", rs.getString("district"));
-        jsonArray.put(jsonObject);
+        else if(rs.getString("status").equals("0"))
+        {
+          jsonObject = new JSONObject();
+          jsonObject.put("username", rs.getString("username"));
+          jsonObject.put("emailid", rs.getString("emailId"));
+          jsonObject.put("productName", rs.getString("name"));
+          jsonObject.put("quantity", rs.getString("quantity"));
+          jsonObject.put("price", rs.getString("price"));
+          jsonObject.put("district", rs.getString("district"));
+          jsonArray.put(jsonObject);
+          }
       }
     stmt.close();
     con.close();

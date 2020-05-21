@@ -163,6 +163,7 @@
     </style>
   </head>
   <body>
+    <% JSONArray jsonarray = (JSONArray) request.getAttribute("userData"); %>
     <div class="header">
       <a href="#default" class="logo">Agro Grocer</a>
   <div class="header-right">
@@ -177,33 +178,38 @@
     <br><br>
       <div class="dataAlign">
     <form action="UpdateDataClass" method="post">
+        <% for(int i = 0 ; i<jsonarray.length() ; i++)
+        {
+          JSONObject jsonobj = jsonarray.getJSONObject(i);
+          %>
       <span class = "values"> Enter name : </span>
       &nbsp;
-      <input type = "text" name = "name" class="inputAlign" id="name" >
+      <input type = "text" name = "name" class="inputAlign" id="name" value="<%=jsonobj.getString("username") %>" >
       <br><br>
       <span class = "values" >Enter email-id : </span>
       &nbsp;
-      <input type = "text" name = "emailid" class="inputAlign" id="emailid">
+      <input type = "text" name = "emailid" class="inputAlign" id="emailid" value="<%=jsonobj.getString("emailid") %>">
       <br><br>
       <span class = "values" >Enter door number : </span>
       &nbsp;
-      <input type = "text" name = "doornumber" class="inputAlign" id="doornumber">
+      <input type = "text" name = "doornumber" class="inputAlign" id="doornumber" value="<%=jsonobj.getString("doornumber") %>">
       <br><br>
       <span class = "values" >Enter phone number : </span>
       &nbsp;
-      <input type = "text" name = "phone" class="inputAlign" id="phone">
+      <input type = "text" name = "phone" class="inputAlign" id="phone" value="<%=jsonobj.getString("phone") %>">
       <br><br>
       <span class = "values" >Enter street name : </span>
       &nbsp;
-      <input type = "text" name = "street" class="inputAlign" id="street">
+      <input type = "text" name = "street" class="inputAlign" id="street" value="<%=jsonobj.getString("street")%>">
       <br><br>
       <span class = "values" >Enter district name : </span>
       &nbsp;
-      <input type = "text" name = "district" class="inputAlign" id="district">
+      <input type = "text" name = "district" class="inputAlign" id="district" value="<%=jsonobj.getString("district")%>">
       <br><br>
+      <% } %>
       </div>
       
-<div class="button">
+        <div class="button">
         <input type="submit" id="submitButton" name="sell" value="update" class="buttonAlign">
         </div>
       </form>

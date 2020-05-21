@@ -138,16 +138,13 @@
       <a href="#default" class="logo">Agro Grocer</a>
       <%-- <input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="Search for names.."> --%>
   <div class="header-right">
-    <%-- <a class="active" href="DataListPage.jsp">Home</a> --%>
-    <a href="UserDataList" method="post">User</a>
-    <%-- <a href="#cart">Cart </a> --%>
     <a href="#about">Contact</a>
     <a href="LoginPage.jsp"> Log out </a>
   </div>
   </div>
 
-  <img src="seller.jpeg" alt="seller" height="200px" width="200px" class="sellImage">
-    <img src ="consumer.jpeg" alt="buyer" height="200px" width="200px">
+  <img src="images/seller.jpeg" alt="seller" height="200px" width="200px" class="sellImage">
+    <img src ="images/consumer.jpeg" alt="buyer" height="200px" width="200px">
       <br><br>
       <div id="mycontainer">
       <form action="RoleSelector" method="post" class="outer">

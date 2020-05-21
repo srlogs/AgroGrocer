@@ -44,8 +44,10 @@ public class StatusReport extends HttpServlet
           jsonArray.put(jsonObject);
         }
       }
+      RequestFunction(request, response, jsonObject.getString("productName"), jsonObject.getString("quantity"), jsonObject.getString("price"));
       stmt.close();
       con.close();
+      
       request.setAttribute("userData", jsonArray);
       RequestDispatcher rd = sc.getRequestDispatcher("/productStatusList.jsp");
       rd.include(request, response);
@@ -54,5 +56,32 @@ public class StatusReport extends HttpServlet
     {
       pw.println(e);
     }
+  }
+  public void RequestFunction(HttpServletRequest request, HttpServletResponse response, String productname, String quantity, String price) throws IOException, NullPointerException, ServletException
+  {
+      Connection con = null;
+      Statement stmt = null;
+      PrintWriter pw = response.getWriter();
+      try 
+      {
+        Class.forName("org.postgresql.Driver");
+        con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/agrogrocer","user","password");
+        stmt = con.createStatement();
+        DatabaseMetaData dbm = con.getMetaData();
+        ResultSet rst = dbm.getTables(null, null, "cartdata", null);
+        if(rst.next())
+        {
+          String emailquery = "SELECT buyername FROM cartdata WHERE productname = '"+productname+"' AND quantity = '"+quantity+"' AND price = '"+price+"' ";
+          ResultSet rSet = stmt.executeQuery(emailquery);
+          while(rSet.next())
+          {
+            request.setAttribute("buyername", rSet.getString("buyername"));
+          }
+        }
+      }
+      catch(Exception e)
+      {
+        pw.println(e);
+      }
   }
 }
